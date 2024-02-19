@@ -13,7 +13,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/theflyingcodr/govalidator/v2"
+	validator "github.com/CGX-Ltd/govalidator/v2"
 )
 
 // Request is a request, duh.
@@ -52,7 +52,6 @@ func main() {
 			w.WriteHeader(http.StatusMethodNotAllowed)
 			fmt.Fprintf(w, "Method not supported")
 		}
-
 	})
 	log.Fatal(http.ListenAndServe(":1234", nil))
 }

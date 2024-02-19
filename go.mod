@@ -1,4 +1,4 @@
-module github.com/theflyingcodr/govalidator/v2
+module github.com/CGX-Ltd/govalidator/v2
 
 go 1.18
 

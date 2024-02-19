@@ -1,4 +1,4 @@
-# Validator [![Go Reference](https://pkg.go.dev/badge/github.com/theflyingcodr/govalidator.svg)](https://pkg.go.dev/github.com/theflyingcodr/govalidator) [![Go Report Card](https://goreportcard.com/badge/github.com/theflyingcodr/govalidator)](https://goreportcard.com/report/github.com/theflyingcodr/govalidator) [![CI Status](https://github.com/theflyingcodr/govalidator/workflows/Go/badge.svg)](https://github.com/theflyingcodr/govalidator/actions?query=workflow%3AGo)
+# Validator [![Go Reference](https://pkg.go.dev/badge/github.com/CGX-Ltd/govalidator.svg)](https://pkg.go.dev/github.com/CGX-Ltd/govalidator) [![Go Report Card](https://goreportcard.com/badge/github.com/CGX-Ltd/govalidator)](https://goreportcard.com/report/github.com/CGX-Ltd/govalidator) [![CI Status](https://github.com/CGX-Ltd/govalidator/workflows/Go/badge.svg)](https://github.com/CGX-Ltd/govalidator/actions?query=workflow%3AGo)
 
 This is a simple input validator for go programs which can be used to test inputs at the boundary of your application.
 
@@ -8,18 +8,18 @@ There is also a provided Validator interface which can applied to structs and te
 
 ## Installation
 
-GoValidator now utilises generics toi reduce the number of function duplication previously required. This requires go1.18 or above. 
+GoValidator now utilises generics toi reduce the number of function duplication previously required. This requires go1.18 or above.
 
 If you wish to have the version that doesn't require generics (this is no longer maintained), install as shown:
 
 ```bash
-go get github.com/theflyingcodr/govalidator@v0.1.3
+go get github.com/CGX-Ltd/govalidator@v0.1.3
 ```
 
 To get the latest version with Generics, install using the below:
 
 ```bash
-go get github.com/theflyingcodr/govalidator/v2
+go get github.com/CGX-Ltd/govalidator/v2
 ```
 
 ## Error structure
@@ -96,7 +96,7 @@ Taking an example from the [examples directory](examples), you can apply to a st
         IsEnabled bool      `json:"isEnabled"`
         Count     int       `json:"count"`
     }
-    
+
     // Validate implements validator.Validator and evaluates Request.
     func (r *Request) Validate() validator.ErrValidation {
         return validator.New().
