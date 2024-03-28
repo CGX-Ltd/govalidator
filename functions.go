@@ -40,9 +40,9 @@ const (
 
 // StrLength will ensure a string, val, has a length that is at least min and
 // at most max.
-func StrLength(val string, min, max int) ValidationFunc {
+func StrLength[S ~string](val S, min, max int) ValidationFunc {
 	return func() error {
-		if len(val) >= min && len(val) <= max {
+		if min <= len(val) && len(val) <= max {
 			return nil
 		}
 		return fmt.Errorf(validateLength, min, max)
@@ -50,7 +50,7 @@ func StrLength(val string, min, max int) ValidationFunc {
 }
 
 // StrLengthExact will ensure a string, val, is exactly length.
-func StrLengthExact(val string, length int) ValidationFunc {
+func StrLengthExact[S ~string](val S, length int) ValidationFunc {
 	return func() error {
 		if len(val) == length {
 			return nil
